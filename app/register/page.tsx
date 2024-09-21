@@ -1,4 +1,4 @@
-import LoginForm from "@/app/ui/loginForm";
+import { RegisterForm } from "@/app/ui/registerForm";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
@@ -10,7 +10,7 @@ export default async function Page() {
 
   return (
     <div>
-      <LoginForm />
+      <RegisterForm />
     </div>
   );
 }
