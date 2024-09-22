@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { signOut } from "next-auth/react";
+import { FaRegUserCircle } from "react-icons/fa";
 
 export default function Navbar() {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -26,7 +27,7 @@ export default function Navbar() {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow z-20"
+            className="menu menu-sm dropdown-content bg-slate-50 rounded-box mt-3 w-52 p-2 shadow z-20"
           >
             <li>
               <a>Item 1</a>
@@ -75,16 +76,11 @@ export default function Navbar() {
             role="button"
             className="btn btn-ghost btn-circle avatar"
           >
-            <div className="w-10 rounded-full">
-              <img
-                alt="Tailwind CSS Navbar component"
-                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-              />
-            </div>
+            <FaRegUserCircle size={32} />
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow z-20"
+            className="menu menu-sm dropdown-content bg-slate-50 rounded-box mt-3 w-52 p-2 shadow z-20"
           >
             <li>
               <Link href="/profile" className="justify-between">
