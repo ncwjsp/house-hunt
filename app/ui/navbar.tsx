@@ -30,21 +30,16 @@ export default function Navbar() {
             className="menu menu-sm dropdown-content bg-slate-50 rounded-box mt-3 w-52 p-2 shadow z-20"
           >
             <li>
-              <a>Item 1</a>
+              <Link href="/for-sale">For Sale</Link>
             </li>
             <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
+              <Link href="/for-rent">For Rent</Link>
             </li>
             <li>
-              <a>Item 3</a>
+              <Link href="/listings">Listings</Link>
+            </li>
+            <li>
+              <Link href="/messages">Messages</Link>
             </li>
           </ul>
         </div>
@@ -89,9 +84,7 @@ export default function Navbar() {
             </li>
 
             <li>
-              <Link href="#" onClick={() => signOut()}>
-                Logout
-              </Link>
+              <button onClick={() => signOut()}>Sign Out</button>
             </li>
           </ul>
         </div>
