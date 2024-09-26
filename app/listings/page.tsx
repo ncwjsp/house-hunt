@@ -1,3 +1,5 @@
+import ListingPanel from "@/app/ui/listingPanel";
+
 export default function Page() {
-  return <div>Listings Page</div>;
+  return <ListingPanel />;
 }

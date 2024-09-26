@@ -3,15 +3,16 @@ import { Schema, Document, models, model } from "mongoose";
 export interface PropertyDocument extends Document {
   // userid: string;
   _id: string;
-  postedDate: Date;
-  postedBy: string;
+  email: string;
   category: "sale" | "rent";
-  type: string;
+  name: string;
   price: number;
   location: string;
   bed: number;
   bath: number;
   car: number;
+  province: string;
+  images: string[];
 }
 
 const PropertySchema: Schema<PropertyDocument> = new Schema(
@@ -20,19 +21,16 @@ const PropertySchema: Schema<PropertyDocument> = new Schema(
     //   type: String,
     //   required: true,
     // },
-    postedDate: {
-      type: Date,
-      required: true,
-    },
-    postedBy: {
+    email: {
       type: String,
       required: true,
     },
     category: {
       type: String,
       required: true,
+      enum: ["sale", "rent"],
     },
-    type: {
+    name: {
       type: String,
       required: true,
     },
@@ -54,6 +52,14 @@ const PropertySchema: Schema<PropertyDocument> = new Schema(
     },
     car: {
       type: Number,
+      required: true,
+    },
+    province: {
+      type: String,
+      required: true,
+    },
+    images: {
+      type: [String],
       required: true,
     },
   },
