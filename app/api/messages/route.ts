@@ -1,68 +1,68 @@
-import dbConnect from "@/app/lib/mongodb";
-import Conversation from "@/app/models/conversation";
-import Message from "@/app/models/message";
-import { NextRequest, NextResponse } from "next/server";
+// import dbConnect from "@/app/lib/mongodb";
+// import Conversation from "@/app/models/conversation";
+// import Message from "@/app/models/message";
+// import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(req: NextRequest) {
-  try {
-    const { sender, message } = await req.json();
-    const receiver = req.nextUrl.searchParams.get("receiver");
+// export async function POST(req: NextRequest) {
+//   try {
+//     const { sender, message } = await req.json();
+//     const receiver = req.nextUrl.searchParams.get("receiver");
 
-    await dbConnect();
+//     await dbConnect();
 
-    let conversation = await Conversation.findOne({
-      participants: { $all: [sender, receiver] },
-    });
+//     let conversation = await Conversation.findOne({
+//       participants: { $all: [sender, receiver] },
+//     });
 
-    if (!conversation) {
-      conversation = await Conversation.create({
-        participants: [sender, receiver],
-      });
-    }
+//     if (!conversation) {
+//       conversation = await Conversation.create({
+//         participants: [sender, receiver],
+//       });
+//     }
 
-    const newMessage = new Message({
-      sender,
-      receiver,
-      message,
-    });
+//     const newMessage = new Message({
+//       sender,
+//       receiver,
+//       message,
+//     });
 
-    conversation.messages.push(newMessage._id);
+//     conversation.messages.push(newMessage._id);
 
-    await Promise.all([conversation.save(), newMessage.save()]);
+//     await Promise.all([conversation.save(), newMessage.save()]);
 
-    return NextResponse.json({ message: "Message sent" }, { status: 201 });
-  } catch (error) {
-    console.error("Error in sending message:");
-    return NextResponse.json(
-      { message: "Error sending message" },
-      { status: 500 }
-    );
-  }
-}
+//     return NextResponse.json({ message: "Message sent" }, { status: 201 });
+//   } catch (error) {
+//     console.error("Error in sending message:");
+//     return NextResponse.json(
+//       { message: "Error sending message" },
+//       { status: 500 }
+//     );
+//   }
+// }
 
-export async function GET(req: NextRequest, { params }: any) {
-  try {
-    const senderId = session?.user?.id;
-    const { id: userToChatId } = params;
+// export async function GET(req: NextRequest, { params }: any) {
+//   try {
+//     const senderId = session?.user?.id;
+//     const { id: userToChatId } = params;
 
-    await dbConnect();
+//     await dbConnect();
 
-    const conversation = await Conversation.findOne({
-      participants: { $all: [senderId, userToChatId] },
-    }).populate("messages");
+//     const conversation = await Conversation.findOne({
+//       participants: { $all: [senderId, userToChatId] },
+//     }).populate("messages");
 
-    if (!conversation) {
-      return NextResponse.json([], { status: 200 });
-    }
+//     if (!conversation) {
+//       return NextResponse.json([], { status: 200 });
+//     }
 
-    const messages = conversation.messages;
+//     const messages = conversation.messages;
 
-    return NextResponse.json(messages, { status: 200 });
-  } catch (error) {
-    console.error("Error in fetching messages");
-    return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
-  }
-}
+//     return NextResponse.json(messages, { status: 200 });
+//   } catch (error) {
+//     console.error("Error in fetching messages");
+//     return NextResponse.json(
+//       { error: "Internal server error" },
+//       { status: 500 }
+//     );
+//   }
+// }

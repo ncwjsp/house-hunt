@@ -47,22 +47,6 @@ export default function CreateListing() {
     setProvince(event.target.value);
   };
 
-  const handleChange = (
-    setter: React.Dispatch<React.SetStateAction<unknown>>,
-    value: any,
-    field: string
-  ) => {
-    // Clear the previous timeout for the specific field
-    if (typingTimeoutRef.current[field]) {
-      clearTimeout(typingTimeoutRef.current[field]);
-    }
-
-    // Set a new timeout for the specific field
-    typingTimeoutRef.current[field] = setTimeout(() => {
-      setter(value);
-    }, 300); // 300ms delay
-  };
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -121,9 +105,7 @@ export default function CreateListing() {
                     name="name"
                     placeholder="Property Name"
                     required
-                    onChange={(e) =>
-                      handleChange(setName, e.target.value, "name")
-                    }
+                    onChange={(e) => setName(e.target.value)}
                   />
                 </div>
 
@@ -141,9 +123,7 @@ export default function CreateListing() {
                       id="bedroom"
                       className="appearance-none block w-full bg-white font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none focus:border-[#98c01d]"
                       placeholder="Number"
-                      onChange={(e) =>
-                        handleChange(setBed, Number(e.target.value), "bed")
-                      }
+                      onChange={(e) => setBed(Number(e.target.value))}
                     />
                   </div>
                   <div className="px-3 mb-6 w-1/3">
@@ -159,9 +139,7 @@ export default function CreateListing() {
                       id="bathroom"
                       className="appearance-none block w-full bg-white font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none focus:border-[#98c01d]"
                       placeholder="Number"
-                      onChange={(e) =>
-                        handleChange(setBath, Number(e.target.value), "bath")
-                      }
+                      onChange={(e) => setBath(Number(e.target.value))}
                     />
                   </div>
                   <div className="px-3 mb-6 w-1/3">
@@ -177,9 +155,7 @@ export default function CreateListing() {
                       id="car"
                       className="appearance-none block w-full bg-white font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none focus:border-[#98c01d]"
                       placeholder="Number"
-                      onChange={(e) =>
-                        handleChange(setCar, Number(e.target.value), "car")
-                      }
+                      onChange={(e) => setCar(Number(e.target.value))}
                     />
                   </div>
                 </div>
@@ -198,9 +174,7 @@ export default function CreateListing() {
                       id="location"
                       className="appearance-none block w-full bg-white font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none focus:border-[#98c01d]"
                       placeholder="Additional Location Information"
-                      onChange={(e) =>
-                        handleChange(setLocation, e.target.value, "location")
-                      }
+                      onChange={(e) => setLocation(e.target.value)}
                     />
                   </div>
                   <div className="px-3 mb-6">
@@ -216,9 +190,7 @@ export default function CreateListing() {
                       id="price"
                       className="appearance-none block w-full bg-white font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none focus:border-[#98c01d]"
                       placeholder="How much do you want to sell or rent out"
-                      onChange={(e) =>
-                        handleChange(setPrice, Number(e.target.value), "price")
-                      }
+                      onChange={(e) => setPrice(Number(e.target.value))}
                     />
                   </div>
                 </div>
