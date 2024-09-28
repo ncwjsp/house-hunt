@@ -1,7 +1,8 @@
 import UserEditForm from "@/app/ui/userEditForm";
 import { getServerSession } from "next-auth/next";
 import authOptions from "@/app/lib/authOptions";
-const getUserInfo = async (userId: string) => {
+
+const getUserInfo = async (userId: string | undefined) => {
   try {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/api/user/${userId}`,
@@ -24,6 +25,7 @@ const getUserInfo = async (userId: string) => {
 export default async function Page() {
   const session = await getServerSession(authOptions);
   const userId = session?.user?.id;
+  console.log(userId);
 
   const { user } = await getUserInfo(userId);
 
