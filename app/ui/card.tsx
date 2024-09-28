@@ -3,7 +3,7 @@ import { LuBath, LuBed } from "react-icons/lu";
 import { IoChatbubbleEllipses } from "react-icons/io5";
 import Link from "next/link";
 
-export default function Card({ property }) {
+export default function Card({ property }: any) {
   if (!property) {
     return <div>No properties found</div>;
   }

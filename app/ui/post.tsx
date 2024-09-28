@@ -1,4 +1,4 @@
-export default function Post({ agent }) {
+export default function Post({ agent }: any) {
   if (!agent) {
     return <div>No Agents Found</div>;
   }

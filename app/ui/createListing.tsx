@@ -4,6 +4,7 @@ import Image from "next/image";
 import provincesData from "@/app/provinces.json";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import user from "../models/user";
 
 const provinces = provincesData;
 
@@ -48,7 +49,7 @@ export default function CreateListing() {
 
   const handleChange = (
     setter: React.Dispatch<React.SetStateAction<unknown>>,
-    value: unknown,
+    value: any,
     field: string
   ) => {
     // Clear the previous timeout for the specific field

@@ -16,7 +16,7 @@ export async function PUT(request: NextRequest, { params }: any) {
   );
 }
 
-export async function GET(request: NextRequest, { params }) {
+export async function GET(request: NextRequest, { params }: any) {
   const { id } = params;
   await dbConnect();
   const user = await User.findOne({ _id: id });

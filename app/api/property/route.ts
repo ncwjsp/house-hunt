@@ -59,7 +59,7 @@ export async function GET() {
   }
 }
 
-export async function DELETE(req) {
+export async function DELETE(req: any) {
   const id = req.nextUrl.searchParams.get("id");
   await dbConnect();
   await Property.findByIdAndDelete(id);

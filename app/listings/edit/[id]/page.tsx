@@ -1,6 +1,6 @@
 import EditListing from "@/app/ui/editListing";
 
-const getPropertyById = async (id) => {
+const getPropertyById = async (id: any) => {
   try {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/api/property/${id}`,
@@ -19,7 +19,7 @@ const getPropertyById = async (id) => {
   }
 };
 
-export default async function Edit({ params }) {
+export default async function Edit({ params }: any) {
   const { id } = params;
   const { property } = await getPropertyById(id);
   const { name, price, location, bed, bath, car, province, images, category } =

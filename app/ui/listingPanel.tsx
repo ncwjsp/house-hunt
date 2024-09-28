@@ -22,7 +22,7 @@ export default async function ListingPanel() {
 
   const { properties } = await getProperties();
   const userProperties = properties.filter(
-    (property) => property.user === userId
+    (property: any) => property.user === userId
   );
 
   return (
@@ -38,7 +38,7 @@ export default async function ListingPanel() {
           </tr>
         </thead>
         <tbody>
-          {userProperties.map((property) => (
+          {userProperties.map((property: any) => (
             <tr key={property.id}>
               <td>
                 <div>

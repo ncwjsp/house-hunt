@@ -24,7 +24,7 @@ export default function EditListing({
   province,
   images,
   category,
-}) {
+}: any) {
   const [newName, setNewName] = useState<string>(name);
   const [newBed, setNewBed] = useState<number>(bed);
   const [newBath, setNewBath] = useState<number>(bath);

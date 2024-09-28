@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-export default function EditAgent({ id, name, detail }) {
+export default function EditAgent({ id, name, detail }: any) {
   const [newName, setNewName] = useState(name);
   const [newDetail, setNewDetail] = useState(detail);
 

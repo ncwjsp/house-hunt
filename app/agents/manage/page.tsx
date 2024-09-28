@@ -21,7 +21,7 @@ export default async function Page() {
   const userId = session?.user?.id;
 
   const { agents } = await getAgents();
-  const filteredAgents = agents.filter((agent) => agent.user === userId);
+  const filteredAgents = agents.filter((agent: any) => agent.user === userId);
 
   return (
     <div>
@@ -31,7 +31,7 @@ export default async function Page() {
         </Link>
       </div>
       <div className="grid lg:grid-cols-5 xs:grid-cols-2 gap-20">
-        {filteredAgents.map((agent) => (
+        {filteredAgents.map((agent: any) => (
           <div
             key={agent._id}
             className="relative flex justify-between flex-col mt-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96 mx-3"

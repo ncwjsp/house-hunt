@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-export default function UserEditForm({ user }) {
+export default function UserEditForm({ user }: any) {
   const [name, setName] = useState(user.name);
   const [email, setEmail] = useState(user.email);
   const [message, setMessage] = useState("");

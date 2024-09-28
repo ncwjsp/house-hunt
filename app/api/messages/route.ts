@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ message: "Message sent" }, { status: 201 });
   } catch (error) {
-    console.error("Error in sending message:", error.message);
+    console.error("Error in sending message:");
     return NextResponse.json(
       { message: "Error sending message" },
       { status: 500 }
@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
   }
 }
 
-export async function GET(req: NextRequest, { params }) {
+export async function GET(req: NextRequest, { params }: any) {
   try {
     const senderId = session?.user?.id;
     const { id: userToChatId } = params;
@@ -59,7 +59,7 @@ export async function GET(req: NextRequest, { params }) {
 
     return NextResponse.json(messages, { status: 200 });
   } catch (error) {
-    console.error("Error in fetching messages:", error.message);
+    console.error("Error in fetching messages");
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }

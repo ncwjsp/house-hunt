@@ -2,7 +2,7 @@
 import { HiOutlineTrash } from "react-icons/hi";
 import { useRouter } from "next/navigation";
 
-export default function RemoveBtn({ id }) {
+export default function RemoveBtn({ id }: any) {
   const router = useRouter();
 
   const removeProperty = async () => {

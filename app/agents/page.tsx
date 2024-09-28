@@ -24,7 +24,7 @@ export default async function Page() {
         </Link>
       </div>
       <div className="grid lg:grid-cols-5 xs:grid-cols-2 gap-20">
-        {agents.map((agent) => (
+        {agents.map((agent: any) => (
           <Post key={agent.id} agent={agent} />
         ))}
       </div>
