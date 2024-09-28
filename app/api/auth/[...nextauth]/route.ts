@@ -9,7 +9,7 @@ interface Credentials {
   password: string;
 }
 
-const authOptions: NextAuthOptions = {
+export const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
       name: "credentials",
@@ -56,20 +56,21 @@ const authOptions: NextAuthOptions = {
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        token.id = user.id;
+        token.id = user.id; // Attach user.id to the JWT token
       }
       return token;
     },
     async session({ session, token }) {
       if (token?.id) {
-        session.user.id = token.id;
+        session.user.id = token.id; // Attach token.id to session.user
       }
       return session;
     },
   },
 };
 
-// Export both the options and the route handlers
+// Create the NextAuth handler
 const handler = NextAuth(authOptions);
 
-export { handler as GET, handler as POST, authOptions };
+// Export the handler for GET and POST requests
+export { handler as GET, handler as POST };
