@@ -11,12 +11,7 @@ export default function Hero() {
           HouseHunt
         </h1>
         <p className="text-white text-lg max-w-full mx-8 mb-5">
-          HouseHunt is a real estate app where users can search for properties,
-          connect with agents, and manage their favorite listings. It lets users
-          sign up, browse property details, view agent profiles, save properties
-          they like, and message agents directly. The app is easy to use on any
-          device and includes features like advanced search filters and
-          interactive maps.
+          Find your dream house now!
         </p>
         <Link
           href="/login"
