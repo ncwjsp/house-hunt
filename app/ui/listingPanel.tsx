@@ -1,5 +1,5 @@
 import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import authOptions from "@/app/lib/authOptions";
 import RemoveBtn from "@/app/ui/removeBtn";
 import Link from "next/link";
 import { HiPencilAlt } from "react-icons/hi";

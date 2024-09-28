@@ -1,7 +1,6 @@
 import UserEditForm from "@/app/ui/userEditForm";
 import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-
+import authOptions from "@/app/lib/authOptions";
 const getUserInfo = async (userId: string) => {
   try {
     const res = await fetch(

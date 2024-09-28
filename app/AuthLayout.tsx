@@ -1,7 +1,7 @@
 import { getServerSession } from "next-auth";
 import Navbar from "@/app/ui/navbar";
 import { ReactNode } from "react";
-import { authOptions } from "./api/auth/[...nextauth]/route";
+import authOptions from "@/app/lib/authOptions";
 
 interface AuthLayoutProps {
   children: ReactNode;

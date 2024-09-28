@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import authOptions from "@/app/lib/authOptions";
 import AgentRmBtn from "@/app/ui/agentRmBtn";
 import { HiPencilAlt } from "react-icons/hi";
 
