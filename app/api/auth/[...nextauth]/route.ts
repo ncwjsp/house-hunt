@@ -1,9 +1,8 @@
 import dbConnect from "@/app/lib/mongodb";
 import User from "@/app/models/user";
-import NextAuth from "next-auth";
+import NextAuth, { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
-import { NextAuthOptions } from "next-auth";
 
 interface Credentials {
   email: string;
@@ -70,6 +69,7 @@ const authOptions: NextAuthOptions = {
   },
 };
 
+// Export both the options and the route handlers
 const handler = NextAuth(authOptions);
 
-export { handler as GET, handler as POST };
+export { handler as GET, handler as POST, authOptions };
