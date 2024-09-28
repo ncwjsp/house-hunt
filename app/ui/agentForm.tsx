@@ -44,7 +44,7 @@ export default function AgentForm() {
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="name" className="block text-sm font-bold mb-2">
-            Agent's name
+            Agents name
           </label>
           <input
             type="text"
@@ -61,7 +61,7 @@ export default function AgentForm() {
 
         <div className="mb-6">
           <label htmlFor="message" className="block text-sm font-bold mb-2">
-            Agent's detail
+            Agents detail
           </label>
           <textarea
             id="message"

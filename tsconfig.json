@@ -27,7 +27,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "tailwind.config.ts"
-, "app/api/property/route.ts"  ],
+    "tailwind.config.ts",
+    "app/api/property/route.ts",
+    "app/api/agent/[id]/route.ts"
+  ],
   "exclude": ["node_modules"]
 }
