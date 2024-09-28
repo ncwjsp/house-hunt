@@ -6,7 +6,7 @@ export const config = {
     "/for-sale",
     "/for-rent",
     "/listings",
-    "/messages",
-    "/profile",
+    "/agents",
+    "/account",
   ],
 };

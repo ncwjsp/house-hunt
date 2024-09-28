@@ -1,3 +1,5 @@
+import HomeHero from "../ui/homeHero";
+
 export default function Page() {
-  return <div>this is home page</div>;
+  return <HomeHero />;
 }

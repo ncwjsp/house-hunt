@@ -15,7 +15,7 @@ export function RegisterForm() {
     e.preventDefault();
 
     try {
-      const response = await fetch("api/register", {
+      const response = await fetch("api/user", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

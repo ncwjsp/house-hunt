@@ -18,11 +18,11 @@ const getProperties = async () => {
 
 export default async function ListingPanel() {
   const session = await getServerSession(authOptions);
-  const userEmail = session?.user?.email;
+  const userId = session?.user?.id;
 
   const { properties } = await getProperties();
   const userProperties = properties.filter(
-    (property) => property.email === userEmail
+    (property) => property.user === userId
   );
 
   return (

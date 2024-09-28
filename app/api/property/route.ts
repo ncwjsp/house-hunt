@@ -6,7 +6,7 @@ import { NextResponse, NextRequest } from "next/server";
 export async function POST(request: NextRequest) {
   try {
     const {
-      email,
+      user,
       category,
       name,
       price,
@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
     await dbConnect();
 
     await Property.create({
-      email,
+      user,
       category,
       name,
       price,

@@ -60,7 +60,7 @@ export default function Navbar() {
           </li>
 
           <li>
-            <Link href="/messages">Messages</Link>
+            <Link href="/agents">Agents</Link>
           </li>
         </ul>
       </div>
@@ -78,8 +78,8 @@ export default function Navbar() {
             className="menu menu-sm dropdown-content bg-slate-50 rounded-box mt-3 w-52 p-2 shadow z-20"
           >
             <li>
-              <Link href="/profile" className="justify-between">
-                Profile
+              <Link href="/account" className="justify-between">
+                Account
               </Link>
             </li>
 

@@ -34,7 +34,11 @@ export const authOptions: AuthOptions = {
             return null;
           }
 
-          return user;
+          return {
+            id: user._id,
+            email: user.email,
+            name: user.name,
+          };
         } catch (error) {
           console.error("Authorization error:", error);
           return null; // Handle error case appropriately
@@ -48,6 +52,20 @@ export const authOptions: AuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
     signIn: "/",
+  },
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user.id; // Attach user.id to the JWT token
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      if (token?.id) {
+        session.user.id = token.id; // Attach token.id to session.user
+      }
+      return session;
+    },
   },
 };
 

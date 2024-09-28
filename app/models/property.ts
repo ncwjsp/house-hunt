@@ -1,9 +1,8 @@
-import { Schema, Document, models, model } from "mongoose";
+import { Schema, Document, models, model, Types } from "mongoose";
 
 export interface PropertyDocument extends Document {
-  // userid: string;
   _id: string;
-  email: string;
+  user: Types.ObjectId;
   category: "sale" | "rent";
   name: string;
   price: number;
@@ -17,12 +16,9 @@ export interface PropertyDocument extends Document {
 
 const PropertySchema: Schema<PropertyDocument> = new Schema(
   {
-    // userid: {
-    //   type: String,
-    //   required: true,
-    // },
-    email: {
-      type: String,
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
       required: true,
     },
     category: {

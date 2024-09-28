@@ -26,9 +26,6 @@ export default function CreateListing() {
 
   const router = useRouter();
 
-  const { data: session } = useSession();
-  const email = session?.user?.email;
-
   const typingTimeoutRef = useRef<{ [key: string]: NodeJS.Timeout | null }>({});
 
   const handleImageUpload = (res: UploadedFile[]) => {
@@ -85,7 +82,7 @@ export default function CreateListing() {
             price,
             category,
             province,
-            email,
+            user,
             images,
           }),
         }
