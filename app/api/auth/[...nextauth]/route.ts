@@ -1,15 +1,16 @@
 import dbConnect from "@/app/lib/mongodb";
 import User from "@/app/models/user";
-import NextAuth, { AuthOptions } from "next-auth";
+import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
+import { NextAuthOptions } from "next-auth";
 
 interface Credentials {
   email: string;
   password: string;
 }
 
-export const authOptions: AuthOptions = {
+const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
       name: "credentials",
@@ -41,7 +42,7 @@ export const authOptions: AuthOptions = {
           };
         } catch (error) {
           console.error("Authorization error:", error);
-          return null; // Handle error case appropriately
+          return null;
         }
       },
     }),
@@ -56,13 +57,13 @@ export const authOptions: AuthOptions = {
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        token.id = user.id; // Attach user.id to the JWT token
+        token.id = user.id;
       }
       return token;
     },
     async session({ session, token }) {
       if (token?.id) {
-        session.user.id = token.id; // Attach token.id to session.user
+        session.user.id = token.id;
       }
       return session;
     },
