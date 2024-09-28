@@ -2,7 +2,7 @@
 import { HiOutlineTrash } from "react-icons/hi";
 import { useRouter } from "next/navigation";
 
-export default function AgentRmBtn({ id }) {
+export default function AgentRmBtn({ id }: any) {
   const router = useRouter();
 
   const removeAgent = async () => {
