@@ -1,6 +1,6 @@
 import EditAgent from "@/app/ui/editAgent";
 
-const getAgentById = async (id) => {
+const getAgentById = async (id: any) => {
   try {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/api/agent/${id}`,
@@ -19,7 +19,7 @@ const getAgentById = async (id) => {
   }
 };
 
-export default async function Edit({ params }) {
+export default async function Edit({ params }: any) {
   const { id } = params;
   const { agent } = await getAgentById(id);
   const { name, detail } = agent;
