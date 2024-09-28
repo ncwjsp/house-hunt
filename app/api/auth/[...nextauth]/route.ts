@@ -9,7 +9,7 @@ interface Credentials {
   password: string;
 }
 
-export const authOptions: NextAuthOptions = {
+const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
       name: "credentials",
