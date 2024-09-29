@@ -14,7 +14,7 @@ type UploadedFile = {
 };
 
 export default function CreateListing() {
-  const session = useSession();
+  const { data: session } = useSession();
   const user = session?.user?.id;
 
   const [name, setName] = useState<string>("");

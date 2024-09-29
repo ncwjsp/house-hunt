@@ -37,8 +37,6 @@ export default function EditListing({
 
   const router = useRouter();
 
-  const typingTimeoutRef = useRef<{ [key: string]: NodeJS.Timeout | null }>({});
-
   const handleImageUpload = (res: UploadedFile[]) => {
     if (res) {
       const uploadedImageUrls = res.map((file) => file.url);
