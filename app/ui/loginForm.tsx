@@ -30,7 +30,7 @@ export default function LoginForm() {
 
       // Re-fetch session to ensure navbar updates
       await signIn("credentials"); // Re-fetch session
-      router.push("/"); // Redirect to home
+      router.push("/home"); // Redirect to home
     } catch (error) {
       console.log(error);
       setError("An error occurred. Please try again.");
