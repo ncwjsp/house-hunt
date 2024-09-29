@@ -13,6 +13,8 @@ export default function LoginForm() {
   const router = useRouter();
   const { data: session } = useSession(); // Get session state
 
+  if (session) router.push("/home");
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
