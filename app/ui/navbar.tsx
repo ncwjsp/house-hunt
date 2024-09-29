@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import { FaRegUserCircle } from "react-icons/fa";
 
 export default function Navbar() {
+  const session = useSession();
+
   return (
     <div className="navbar">
       <div className="navbar-start">
@@ -43,9 +45,16 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
-        <Link href="/" className="btn btn-ghost text-xl">
-          HouseHunt
-        </Link>
+
+        {!session ? (
+          <Link href="/" className="btn btn-ghost text-xl">
+            HouseHunt
+          </Link>
+        ) : (
+          <Link href="/home" className="btn btn-ghost text-xl">
+            HouseHunt
+          </Link>
+        )}
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
