@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+<a id="readme-top"></a>
+<!--
+*** Thanks for checking out the Best-README-Template. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+*** or simply open an issue with the tag "enhancement".
+*** Don't forget to give the project a star!
+*** Thanks again! Now go create something AMAZING! :D
+-->
 
-## Getting Started
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<!-- PROJECT LOGO -->
+<div align="center">
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+  <h3 align="center">HouseHunt</h3>
 
-## Learn More
+  <p align="center">
+    A Real Estate Website
+    <br />
+    <br />
+    <a href="https://househunt-ncwjsp.vercel.app/">View Demo</a>
+  </p>
+</div>
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+<!-- ABOUT THE PROJECT -->
+### About The Project
+![image](https://github.com/user-attachments/assets/dd3c1f05-2d3d-4505-b242-a283faaf2ca7)
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+HouseHunt is a real estate website that allows users to find properties, and agents. The website is still not completely done but it already contains the neccessary data models and operations
+<br />
+## This project is created by Nueachai Wijitsopon
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+### Tools used
+
+Lists of the tools that are used to create this project
+
+* Next
+* React
+* Node
+* Bun
+* DaisyUI
+* ReactIcons
+* Tailwind
+* NextAuth
+* MongoDB
+* Mongoose
+* Uploadthing
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+## Installation
+
+_To use this project locally_
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/ncwjsp/house-hunt.git
+   ```
+2. CD into the directory
+   ```sh
+   cd house-hunt
+   ```
+3. Install packages
+   ```sh
+   npm install
+   ```
+   or with Bun
+   ```sh
+   bun install
+   ```
+4. Run the project
+   ```sh
+   npm run dev
+   ```
+   or with Bun
+   ```sh
+   bun dev
+   ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- ACKNOWLEDGMENTS -->
+## References
+
+Some other useful components that I used in this project
+* https://www.creative-tim.com/twcomponents/component/property-card
+* https://www.creative-tim.com/twcomponents/component/contact-form-dark-mode
+
+  
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
