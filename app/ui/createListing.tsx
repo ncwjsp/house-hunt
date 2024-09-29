@@ -4,7 +4,6 @@ import Image from "next/image";
 import provincesData from "@/app/provinces.json";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import user from "../models/user";
 
 const provinces = provincesData;
 
@@ -15,6 +14,9 @@ type UploadedFile = {
 };
 
 export default function CreateListing() {
+  const session = useSession();
+  const user = session?.user?.id;
+
   const [name, setName] = useState<string>("");
   const [bed, setBed] = useState<number>(0);
   const [bath, setBath] = useState<number>(0);
@@ -26,8 +28,6 @@ export default function CreateListing() {
   const [province, setProvince] = useState<string>("");
 
   const router = useRouter();
-
-  const typingTimeoutRef = useRef<{ [key: string]: NodeJS.Timeout | null }>({});
 
   const handleImageUpload = (res: UploadedFile[]) => {
     if (res) {

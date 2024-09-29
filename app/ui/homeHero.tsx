@@ -1,8 +1,17 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import bg from "@/public/bg.jpg";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function HomeHero() {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.refresh();
+  }, []);
+
   return (
     <div className="relative h-screen">
       <div className="absolute inset-0 bg-black opacity-30 z-10 "></div>
