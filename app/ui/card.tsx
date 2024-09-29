@@ -94,11 +94,11 @@ export default function Card({ property }: any) {
                     minute: "numeric",
                   })}
                 </p>
-                <Link
+                {/* <Link
                   href={`${process.env.NEXTAUTH_URL}/messages/${property.user}`}
                 >
                   <IoChatbubbleEllipses size={30} />
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
