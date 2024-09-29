@@ -57,7 +57,7 @@ export function RegisterForm() {
                     name="username"
                     type="text"
                     required
-                    className="w-full text-white text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600"
+                    className="w-full text-black text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600"
                     placeholder="Enter your name"
                     onChange={(e) => setName(e.target.value)}
                   />
@@ -72,7 +72,7 @@ export function RegisterForm() {
                     name="username"
                     type="email"
                     required
-                    className="w-full text-white text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600"
+                    className="w-full text-black text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600"
                     placeholder="Enter your email"
                     onChange={(e) => setEmail(e.target.value)}
                   />
@@ -88,7 +88,7 @@ export function RegisterForm() {
                     name="password"
                     type="password"
                     required
-                    className="w-full text-white text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600"
+                    className="w-full text-black text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600"
                     placeholder="Enter your password"
                     onChange={(e) => setPassword(e.target.value)}
                   />
